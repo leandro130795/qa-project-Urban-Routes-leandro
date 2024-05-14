@@ -1,10 +1,10 @@
 # PRUEBAS AUTOMATIZADAS PARA URBAN ROUTES
 
-#URBANROUTESPAGE
 # UrbanRoutes Automation Tests
 
 Este repositorio contiene pruebas automatizadas para la aplicación UrbanRoutes utilizando Selenium WebDriver.
 
+#URBANROUTESPAGE
 ## Requisitos
 - Python 3.x
 - Selenium WebDriver
@@ -34,7 +34,10 @@ config.py: Configuración del proyecto, incluyendo la URL base y la ruta al WebD
 urban_routes_tests.py: Contiene las pruebas de Selenium para las diferentes funcionalidades de UrbanRoutes.
 README.md: Documentación del proyecto.
 
+
+
 #HELPERS
+
 # Selenium WebDriver Support Module
 
 Este módulo proporciona métodos de espera y apoyo para mejorar la estabilidad y confiabilidad de las pruebas automatizadas utilizando Selenium WebDriver.
@@ -78,7 +81,11 @@ wait_visibility_of_element(driver, elemento, 10)  # Espera máximo 10 segundos
 # Ejemplo de uso de wait_to_be_clickable_of_element
 wait_to_be_clickable_of_element(driver, elemento, 10)  # Espera máximo 10 segundos
 
+
+
+
 #MAIN
+
 ## Requisitos
 
 - Python 3.x
@@ -116,5 +123,3 @@ data.py: Archivo de datos que contiene la configuración necesaria para las prue
 helpers.py: Módulo con funciones auxiliares para las pruebas.
 urbanroutespage.py: Módulo que define la clase UrbanRoutesPage para interactuar con la página de UrbanRoutes.
 README.md: Documentación del proyecto.
-
-#
