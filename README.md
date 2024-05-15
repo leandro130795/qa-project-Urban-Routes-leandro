@@ -5,6 +5,28 @@
 Este repositorio contiene pruebas automatizadas para la aplicación UrbanRoutes utilizando Selenium WebDriver.
 
 #URBANROUTESPAGE
+
+Este código define una clase llamada `UrbanRoutesPage`, que representa la página web de la aplicación UrbanRoutes y contiene métodos para interactuar con diferentes elementos de la página.
+
+1. **Importaciones de paquetes**:
+   - `Keys`: Importa la clase `Keys` del módulo `selenium.webdriver` para simular la pulsación de teclas.
+   - `By`: Importa la clase `By` del módulo `selenium.webdriver.common.by` para identificar elementos mediante diferentes criterios.
+
+2. **Variables de selección de elementos**:
+   - Define variables para identificar diferentes elementos de la página web utilizando diferentes estrategias de localización, como ID, XPATH, CSS_SELECTOR, etc.
+
+3. **Método `__init__`**:
+   - Este método inicializa un objeto `UrbanRoutesPage` con un controlador WebDriver.
+
+4. **Métodos de acción y obtención**:
+   - Cada método realiza una acción específica en la página web, como establecer una dirección de origen, hacer clic en un botón, ingresar un número de teléfono, etc.
+   - Algunos métodos también devuelven valores, como obtener el valor de un campo de entrada o verificar si un elemento está visible en la página.
+
+5. **Comentarios explicativos**:
+   - Se agregan comentarios descriptivos antes de cada método para indicar qué acción realiza ese método.
+
+En resumen, este código proporciona una interfaz para interactuar con la página web de la aplicación UrbanRoutes mediante Selenium WebDriver, facilitando la automatización de pruebas y tareas. Cada método encapsula una acción específica que puede realizar un usuario en la página web.
+
 ## Requisitos
 - Python 3.x
 - Selenium WebDriver
@@ -37,6 +59,29 @@ README.md: Documentación del proyecto.
 
 
 #HELPERS
+
+Este código contiene métodos de espera y apoyo útiles para automatizar pruebas con Selenium WebDriver. Aquí hay una descripción detallada:
+
+1. **`retrieve_phone_code(driver) -> str`**:
+   - Este método busca y devuelve un código de confirmación de teléfono como una cadena.
+   - Funciona esperando y analizando los registros de rendimiento del navegador para encontrar el código de confirmación.
+   - Utiliza el WebDriver proporcionado como argumento para acceder a los registros del navegador y obtener el código.
+   - Si no se encuentra ningún código después de 10 intentos, genera una excepción.
+   - Útil para obtener códigos de confirmación que pueden ser necesarios durante las pruebas automatizadas, como al verificar la autenticación de un número de teléfono.
+
+2. **`wait_visibility_of_element(driver, element, w_time)`**:
+   - Este método espera hasta que un elemento en la página web sea visible.
+   - Utiliza la clase `WebDriverWait` de Selenium para esperar hasta que se cumpla la condición de visibilidad del elemento especificado.
+   - Toma el WebDriver, el elemento y el tiempo máximo de espera como argumentos.
+   - Útil para asegurarse de que un elemento esté presente y visible antes de realizar acciones en él durante las pruebas.
+
+3. **`wait_to_be_clickable_of_element(driver, element, w_time)`**:
+   - Este método espera hasta que un elemento en la página web sea clickeable.
+   - Utiliza la clase `WebDriverWait` de Selenium para esperar hasta que se cumpla la condición de clickeabilidad del elemento especificado.
+   - Toma el WebDriver, el elemento y el tiempo máximo de espera como argumentos.
+   - Útil para asegurarse de que un elemento esté listo para ser clickeado antes de interactuar con él durante las pruebas.
+
+Estos métodos son esenciales para garantizar que las pruebas automatizadas se ejecuten de manera confiable y se comporten como se espera en diferentes situaciones de la interfaz de usuario. Permiten gestionar tiempos de espera y obtener información relevante de la página web, como códigos de confirmación.
 
 # Selenium WebDriver Support Module
 
@@ -85,6 +130,34 @@ wait_to_be_clickable_of_element(driver, elemento, 10)  # Espera máximo 10 segun
 
 
 #MAIN
+
+Este código es un conjunto de pruebas automatizadas para la aplicación UrbanRoutes utilizando Selenium WebDriver. Aquí está una descripción paso a paso:
+
+1. **Importaciones de módulos**: 
+   - Importa el módulo `data`, que contiene datos de configuración para las pruebas.
+   - Importa las clases y funciones necesarias de los módulos `selenium.webdriver`, `selenium.webdriver.chrome.options`, `helpers`, y `UrbanRoutesPage`.
+
+2. **Clase `TestUrbanRoutes`**: 
+   - Esta clase contiene métodos de prueba para diferentes funcionalidades de la aplicación UrbanRoutes.
+   - `driver = webdriver.Chrome`: Define la clase del WebDriver que se utilizará para las pruebas como `webdriver.Chrome`.
+
+3. **Método `setup_class(cls)`**:
+   - Este método es decorado con `@classmethod` y se ejecuta una vez antes de ejecutar todas las pruebas de la clase.
+   - Configura las opciones del navegador Chrome para el WebDriver, como tamaño de ventana y preferencias de registro de rendimiento.
+   - Inicializa el WebDriver de Chrome con las opciones configuradas.
+
+4. **Métodos de prueba**:
+   - Cada método de prueba comienza con `test_` y contiene la lógica para probar una funcionalidad específica de la aplicación.
+   - Se crea una instancia de `UrbanRoutesPage` para interactuar con la página web de UrbanRoutes.
+   - Se accede a la URL de la aplicación UrbanRoutes utilizando el WebDriver.
+   - Se realizan diversas acciones en la página web, como establecer una ruta, seleccionar comodidades, ingresar un número de teléfono, agregar una tarjeta de crédito, etc.
+   - Se realizan afirmaciones para verificar que el comportamiento de la aplicación sea el esperado después de cada acción.
+
+5. **Método `teardown_class(cls)`**:
+   - Este método es decorado con `@classmethod` y se ejecuta una vez después de ejecutar todas las pruebas de la clase.
+   - Cierra el WebDriver después de completar todas las pruebas.
+
+En resumen, este código representa un conjunto completo de pruebas automatizadas que cubren diferentes aspectos y funcionalidades de la aplicación UrbanRoutes utilizando Selenium WebDriver.
 
 ## Requisitos
 
